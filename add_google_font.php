@@ -5,4 +5,4 @@ function add_google_fonts() {
 add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
 
 // functions.php
-
+// css = font-family: 'Open Sans';
