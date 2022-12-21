@@ -1,0 +1,28 @@
+
+
+
+Cari file function.php
+Lalu masukan ini
+
+/**
+ * ADD PDN FUNCTION
+ */
+ 
+require get_template_directory() . '/pdn-data/pdn_function.php';
+
+
+		<?php
+			if ( function_exists('pdn_breadcrumbs') ) {
+				echo '<div id="pdn_breadcrumb">';
+				pdn_breadcrumbs();
+				echo '</div>';
+			}
+		?>
+
+
+
+
+
+
+
+
