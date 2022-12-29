@@ -22,14 +22,14 @@ HEADER
 ------------------------ */
 
 wp_nav_menu( 
-	array(
-			'theme_location' 	  => 'pudin_primary_menu',
-			'menu_id'        	  => '',
-			'menu_class'		    => '',
-			'container' 		    => 'div', 
-			'container_class' 	=> 'navbar-links', 
-			'fallback_cb'		    => false,
-	)
+ array(
+  'theme_location' 	=> 'pudin_primary_menu',
+  'menu_id'        	=> '',
+  'menu_class'		=> '',
+  'container' 		=> 'div', 
+  'container_class' 	=> 'navbar-links', 
+  'fallback_cb'		=> false,
+ )
 );
 
 /* ------------------------------------------------------------------------------------------- */
