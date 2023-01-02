@@ -16,7 +16,7 @@ function pdn_share_after_content($content, $id = false){
 	$pdn_link['url']   = esc_url( get_permalink( $id ) );
 	$pdn_link['title'] = wp_strip_all_tags( get_the_title( $id ) );
 	$pdn_image = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'pdn_share_after_content' ); //$image[0] thumbnail
-	$pdn_thumbnail = $pdn_image[0];
+	$pdn_thumbnail = isset($pdn_image[0]) ? $pdn_image[0] : get_template_directory_uri().'/assets/images/img-thumbnail1.jpg'; //Jangan Lupa, Siapkan gambar defaultnya ya.
 	// POSTS
     if (is_single()) {
         $content .= '<div class="pdn-share">';
