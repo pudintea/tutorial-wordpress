@@ -7,7 +7,7 @@
 	<body>
 		<div>
 			<?php
-			$url = 'https://www.al-azhar.or.id/wp-json/wp/v2/posts';
+			$url = 'https://www.pudin.my.id/wp-json/wp/v2/posts';
 			$contents = file_get_contents($url);
 			$contents = utf8_encode($contents);
 			$reults = json_decode($contents, true);
