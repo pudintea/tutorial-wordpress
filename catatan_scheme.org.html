@@ -1,0 +1,43 @@
+
+<script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "<?php the_permalink(); ?>"
+            },
+            "headline": "<?php the_title(); ?>",
+            "description": "<?php echo get_the_excerpt();?>",
+            "datePublished": "<?php the_time('Y-m-d h:i:s');?>",
+            "dateModified": "<?php the_modified_date('Y-m-d h:i:s');?>",
+            
+            "image": {
+              "@type": "ImageObject",
+              "url": "<?php echo get_the_post_thumbnail_url(); ?>",
+
+            },
+
+            
+           "publisher": {
+              "@type": "Organization",
+              "name": "YPI Al Azhar",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "<?php echo get_template_directory_uri()?>/assets/images/img-thumbnail1.jpg",
+              }
+            },
+
+            "author": {
+                "url": "https://www.pdn.my.id/",
+                "@type": "Person",
+                "name": "Irawati"
+            }
+        }
+        // postMeta Custom By pdn.my.id
+    </script>
+    <div><?php echo get_the_post_thumbnail_url('','thumbnail');?></div>
+    <div><?php echo get_the_post_thumbnail_url('','medium');?></div>
+    <div><?php echo get_the_post_thumbnail_url('','large');?></div>
+
+
