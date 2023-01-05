@@ -14,7 +14,7 @@
             
             "image": {
               "@type": "ImageObject",
-              "url": "<?php echo get_the_post_thumbnail_url(); ?>",
+              "url": "<?= get_the_post_thumbnail_url(); ?>",
 
             },
 
@@ -24,14 +24,14 @@
               "name": "YPI Al Azhar",
               "logo": {
                 "@type": "ImageObject",
-                "url": "<?php echo get_template_directory_uri()?>/assets/images/img-thumbnail1.jpg",
+                "url": "<?= get_template_directory_uri()?>/assets/images/img-thumbnail1.jpg",
               }
             },
 
             "author": {
                 "url": "https://www.pdn.my.id/",
                 "@type": "Person",
-                "name": "Irawati"
+                "name": "<?= get_the_author(); ?>"
             }
         }
         // postMeta Custom By pdn.my.id
