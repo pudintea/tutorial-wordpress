@@ -9,8 +9,8 @@
             },
             "headline": "<?php the_title(); ?>",
             "description": "<?php echo get_the_excerpt();?>",
-            "datePublished": "<?php the_time('Y-m-d h:i:s');?>",
-            "dateModified": "<?php the_modified_date('Y-m-d h:i:s');?>",
+            "datePublished": "<?=get_the_date('c', get_the_ID());?>",
+            "dateModified": "<?=get_the_modified_date('c', get_the_ID())?>",
             
             "image": {
               "@type": "ImageObject",
