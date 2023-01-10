@@ -7,16 +7,16 @@
 		
 		P. Saepudin Ilham.
 		Secript ini simpan di single.php
-		setPostViews(get_the_ID());
-		echo getPostViews(get_the_ID());
+		pdnsetPostViews(get_the_ID());
+		echo pdngetPostViews(get_the_ID());
 		===
 		secript dibawah ini simpan di function.php
 		
 */
 
 /* Post Count and Views by Pudin*/
-if ( ! function_exists( 'getPostViews' ) ) :
-	function getPostViews($postID){ 
+if ( ! function_exists( 'pdngetPostViews' ) ) :
+	function pdngetPostViews($postID){ 
 	    $count_key = 'post_views_count'; 
 		$count = get_post_meta($postID, 
 		$count_key, true); 
@@ -29,8 +29,8 @@ if ( ! function_exists( 'getPostViews' ) ) :
 		return '<span class="post-views"><i class="fas fa-eye" aria-hidden="true"></i>'.$count.' Views</span>'; 
 	} 
 endif;
-if ( ! function_exists( 'setPostViews' ) ) :
-	function setPostViews($postID) { 
+if ( ! function_exists( 'pdnsetPostViews' ) ) :
+	function pdnsetPostViews($postID) { 
 	    $count_key = 'post_views_count'; 
 		$count = get_post_meta($postID, $count_key, true); 
 		
