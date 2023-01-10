@@ -7,7 +7,7 @@ if (get_the_post_thumbnail_url() == ''){
 ?>
 
 
-<script type="application/ld+json">
+	<script type="application/ld+json">
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
@@ -23,7 +23,8 @@ if (get_the_post_thumbnail_url() == ''){
             "image": {
               "@type": "ImageObject",
               "url": "<?=$pdn_post_thumbnail; ?>",
-
+			  "height": 630,
+    		  "width": 1200
             },
 
             
@@ -33,6 +34,8 @@ if (get_the_post_thumbnail_url() == ''){
               "logo": {
                 "@type": "ImageObject",
                 "url": "<?= get_template_directory_uri()?>/assets/images/img-thumbnail1.jpg",
+				"width": 375,
+      			"height": 199
               }
             },
 
@@ -43,7 +46,7 @@ if (get_the_post_thumbnail_url() == ''){
             }
         }
         // postMeta Custom By pdn.my.id
-    </script>
+	</script>
     <div><?php echo get_the_post_thumbnail_url('','thumbnail');?></div>
     <div><?php echo get_the_post_thumbnail_url('','medium');?></div>
     <div><?php echo get_the_post_thumbnail_url('','large');?></div>
