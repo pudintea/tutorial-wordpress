@@ -1,3 +1,11 @@
+<?php
+if (get_the_post_thumbnail_url() == ''){
+	$pdn_post_thumbnail = get_template_directory_uri().'/assets/images/img-thumbnail1.jpg';
+}else{
+	$pdn_post_thumbnail = get_the_post_thumbnail_url();
+}
+?>
+
 
 <script type="application/ld+json">
         {
@@ -14,7 +22,7 @@
             
             "image": {
               "@type": "ImageObject",
-              "url": "<?= get_the_post_thumbnail_url(); ?>",
+              "url": "<?=$pdn_post_thumbnail; ?>",
 
             },
 
