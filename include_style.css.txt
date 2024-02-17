@@ -1,0 +1,24 @@
+Following method are include style.css.
+
+Method - 1
+// add in your header.php
+<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
+
+Method - 2
+// load css into the website's front-end
+function mytheme_enqueue_style() {
+    wp_enqueue_style( 'mytheme-style', get_stylesheet_uri() ); 
+}
+add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_style' );
+
+
+Method - 3
+// Add this code in your functions.php
+function add_stylesheet_to_head() {
+      echo "<link href='".get_stylesheet_uri()."' rel='stylesheet' type='text/css'>";
+}
+add_action( 'wp_head', 'add_stylesheet_to_head' );
+
+
+
+  =========================================PUDIN.MY.ID==================================================
