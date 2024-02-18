@@ -1,0 +1,53 @@
+Parameters:
+
+The wp_nav_menu() function in WordPress provides developers with the flexibility to modify the behavior and appearance of the navigation menu. Within the $args array, there are several commonly used parameters that can be utilized for customization.
+
+menu: (int|string|WP_Term) Specifies which menu to display by either its ID, name, or WP_Term object.
+container: (string|bool) Defines the HTML container element for the menu. Default is ‘div’, set to false for no container.
+container_id: (string) Specifies the ID attribute of the container element.
+container_class: (string) Defines the class attribute of the container element.
+menu_class: (string) Specifies the class attribute for the <ul> element containing the menu items.
+menu_id: (string) Sets the ID attribute of the <ul> element containing the menu items.
+echo: (bool) Determines whether to echo the menu or return it as a string. Default is true (echo).
+fallback_cb: (callable|string) Defines a fallback function to be called if the menu doesn’t exist. Default is ‘wp_page_menu’.
+before: (string) Adds content before each link within the menu.
+after: (string) Adds content after each link within the menu.
+link_before: (string) Adds content before the anchor text of each link.
+link_after: (string) Adds content after the anchor text of each link.
+items_wrap: (string) Specifies how the list items should be wrapped. Default is ‘<ul id=”%1$s” class=”%2$s”>%3$s</ul>’.
+depth: (int) Limits the depth of the menu. 0 means no limit.
+walker: (object) Custom walker class to use for rendering the menu. This allows for fine-grained control over the menu’s HTML output.
+there_location: (string) Theme location to be used. Must be registered with register_nav_menu() in order to be selectable by the user.
+items_wrap: (string) How the list items should be wrapped. Uses printf() format with numbered placeholders. The default is an ul with an id and class.
+item_spacing: (string) Whether to preserve whitespace within the menu’s HTML. Accepts ‘preserve’ or ‘discard’. Default ‘preserve’.
+How to use wp_nav_menu() in WordPress
+To use the wp_nav_menu() function in WordPress, you typically include it in your theme files, such as in the header.php or footer.php file, where you want the navigation menu to appear. Here’s a basic example:
+
+<?php
+
+// Display the default navigation menu
+wp_nav_menu();
+
+This basic usage will display the default navigation menu assigned in the WordPress admin dashboard under “Appearance” > “Menus.”
+
+If you want to customize the menu and its display, you can use the $args parameter. Here’s an example with some common customization options:
+
+<?php
+
+// Define custom arguments
+$menu_args = array(
+    'theme_location' => 'primary-menu', // Menu location defined in your theme
+    'container'      => 'nav',          // Use <nav> as the container
+    'container_id'   => 'main-nav',     // ID attribute of the container
+    'container_class'=> 'menu-container',// Class attribute of the container
+    'menu_class'     => 'menu',         // Class attribute of the menu
+    'echo'           => true,           // Echo the menu (true) or return it as a string (false)
+    'fallback_cb'    => 'wp_page_menu', // Fallback function if the menu doesn't exist
+);
+
+// Display the custom navigation menu
+wp_nav_menu($menu_args);
+
+
+
+==================================PUDIN.MY.ID================================================
