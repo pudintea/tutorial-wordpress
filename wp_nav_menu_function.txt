@@ -1,4 +1,20 @@
+
+
+1. function.php
+========================================================
+function register_my_menu() {
+register_nav_menu('new-menu',__( 'New Menu' ));
+}
+add_action( 'init', 'register_my_menu' );
+
+
+
+2. header.php
+=========================================================================================================
+Open up header.php, find the existing call to wp_nav_menu and add the following immediately underneath:
 Parameters:
+<?php wp_nav_menu( array( 'theme_location' => 'new-menu' ) ); ?>
+
 
 The wp_nav_menu() function in WordPress provides developers with the flexibility to modify the behavior and appearance of the navigation menu. Within the $args array, there are several commonly used parameters that can be utilized for customization.
 
@@ -36,7 +52,7 @@ If you want to customize the menu and its display, you can use the $args paramet
 
 // Define custom arguments
 $menu_args = array(
-    'theme_location' => 'primary-menu', // Menu location defined in your theme
+    'theme_location' => 'new-menu', // Menu location defined in your theme
     'container'      => 'nav',          // Use <nav> as the container
     'container_id'   => 'main-nav',     // ID attribute of the container
     'container_class'=> 'menu-container',// Class attribute of the container
