@@ -1,3 +1,4 @@
+#.htaccess
 #Adjust default time zone
 SetEnv TZ Asia/Jakarta
 # BEGIN WordPress
