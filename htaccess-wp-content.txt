@@ -1,0 +1,7 @@
+#.htaccess
+# Lokasi : wp-content/uploads/
+# Kill PHP Execution
+# pudin.my.id
+<Files ~ ".ph(?:p[345]?|t|tml)$">
+  deny from all
+</Files>
