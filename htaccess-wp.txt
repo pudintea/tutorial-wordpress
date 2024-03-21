@@ -23,22 +23,22 @@ SetEnv TZ Asia/Jakarta
 
 # Block WordPress xmlrpc.php requests
 <Files xmlrpc.php>
-        order deny,allow
+        order allow,deny
         deny from all
 </Files>
 
 <Files wp-config.php>
-        order deny,allow
+        order allow,deny
         deny from all
 </Files>
   
 <Files .httaccess>
-        order deny,allow
+        order allow,deny
         deny from all
 </Files>
 
 <Files wp-cron.php>
-        order deny,allow
+        order allow,deny
         deny from all
 </Files>
 
