@@ -1,0 +1,12 @@
+
+
+/* PUDIN.MY.ID */
+// define( 'WP_SITEURL', 'https://example.com/wordpress' );
+//define( 'WP_HOME', 'https://example.com/wordpress' );
+
+define( 'DISALLOW_FILE_EDIT', true );
+// somewhere in wp-config.php
+define('DISALLOW_FILE_MODS', true);
+
+
+================================= PUDIN.MY.ID ==============================================
