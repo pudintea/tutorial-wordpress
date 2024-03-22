@@ -1,4 +1,9 @@
-
+/* PUDIN.MY.ID */
+if ($_SERVER['HTTP_HOST'] == 'localhost'){
+	define('WP_DEBUG', true);
+}else{
+	define('WP_DEBUG', false);
+}
 
 /* PUDIN.MY.ID */
 // define( 'WP_SITEURL', 'https://example.com/wordpress' );
