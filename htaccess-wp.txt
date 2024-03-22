@@ -32,7 +32,7 @@ SetEnv TZ Asia/Jakarta
         deny from all
 </Files>
   
-<Files .httaccess>
+<Files .htaccess>
         order allow,deny
         deny from all
 </Files>
