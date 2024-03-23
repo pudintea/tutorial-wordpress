@@ -26,6 +26,12 @@ Options -Indexes
         RewriteCond %{REQUEST_FILENAME} !-f
         RewriteCond %{REQUEST_FILENAME} !-d
         RewriteRule . /index.php [L]
+	# Disable hotlinking of images with forbidden or custom image option
+	RewriteCond %{HTTP_REFERER} !^$
+	RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?al-azhar.sch.id [NC]
+	RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?al-azhar.or.id [NC]
+	RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?google.com [NC]
+	RewriteRule \.(jpg|jpeg|png|gif)$ – [NC,F,L]
 </IfModule>
 
 #Protect .htaccess From Unauthorized Access
