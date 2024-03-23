@@ -2,6 +2,10 @@
 # pudin.my.id
 # Adjust default time zone
 SetEnv TZ Asia/Jakarta
+
+# mencegah aksess ke folder yang tidak ada file index.html
+Options -Indexes
+
 # BEGIN WordPress
 # The directives (lines) between "BEGIN WordPress" and "END WordPress" are
 # dynamically generated, and should only be modified via WordPress filters.
@@ -20,6 +24,13 @@ SetEnv TZ Asia/Jakarta
         RewriteCond %{REQUEST_FILENAME} !-d
         RewriteRule . /index.php [L]
 </IfModule>
+
+#Protect .htaccess From Unauthorized Access
+<files ~ "^.*\.([Hh][Tt][Aa])">
+	order allow,deny
+	deny from all
+	satisfy all
+</files>
 
 # Block WordPress xmlrpc.php requests
 <Files xmlrpc.php>
