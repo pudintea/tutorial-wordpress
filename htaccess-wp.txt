@@ -95,5 +95,18 @@ Options -Indexes
     BrowserMatch ^Mozilla/4\.0[678] no-gzip
     BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
 </IfModule>
+
+# Headers
+<IfModule mod_headers.c>
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header set X-XSS-Protection "1; mode=block"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always append X-Frame-Options DENY
+  Header set X-Permitted-Cross-Domain-Policies "none"
+  Header always set Referrer-Policy "strict-origin"
+  Header always set Permissions-Policy "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()"
+<IfModule mod_headers.c>
+
 # END DEFLATE COMPRESSION
 # END WordPress
