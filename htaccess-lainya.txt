@@ -1,0 +1,23 @@
+# mencegah aksess ke folder yang tidak ada file index.html
+Options -Indexes
+
+# mencegah eksekusi file .php
+<Files *.php>
+	deny from all
+</Files>
+
+# Protect .htaccess From Unauthorized Access
+<files ~ "^.*\.([Hh][Tt][Aa])">
+	order allow,deny
+	deny from all
+	satisfy all
+</files>
+
+# BEGIN block author scans
+RewriteEngine On
+RewriteBase /
+RewriteCond %{QUERY_STRING} (author=\d+) [NC]
+RewriteRule .* - [F]
+# END block author scans
+
+# ===================== PUDIN.MY.ID ==========
