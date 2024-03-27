@@ -1,0 +1,49 @@
+1. To do that, add the code to functions.php of your theme:
+
+function my_theme_widgets_init() {
+    register_sidebar( array(
+        'name'           => __( 'Header Right Sidebar', 'my-theme' ),
+        'id'             => 'sidebar-header-right',
+        'description'    => __( 'Widgets for the site header. Top right corner.', 'my-theme' ),
+        'before_widget'  => '<section class="my-widget">',
+        'after_widget'   => '</section>',
+        'before_title'   => '<h2>',
+        'after_title'    => '</h2>',
+        'before_sidebar' => '<div class="my-sidebar">',
+        'after_sidebar'  => '</div>',
+    ) );
+}
+add_action( 'widgets_init', 'my_theme_widgets_init' );
+
+KETERANGAN :
+'name' – the title of the sidebar in the WordPress admin panel: Appearance > Widgets (see the image below)
+'id' – unique sidebar ID. WordPress functions will call the sidebar by this ID.
+'description' – the sidebar description in the WordPress admin panel: Appearance > Widgets (see the image below).
+'before_widget' – this will be output before each widget inside the sidebar on the front end.
+'after_widget' – this will be output after each widget inside the sidebar on the front end.
+In our case, each widget inside the sidebar on the front end will be surrounded by <section class="my-widget"> and </section>.
+'before_title' – this will be output before a widget title on the front end.
+'after_title' – this will be output after a widget title on the front end.
+In our case, the title of each widget inside the sidebar on the front end will be surrounded by <h2> and </h2>.
+'before_sidebar' – this will be output before the sidebar HTML code on the front end.
+'after_sidebar' – this will be output after the sidebar HTML code on the front end.
+In our case, the whole sidebar code on the front end will be surrounded by <div class="my-sidebar"> and </div>.
+Additionally:
+
+
+
+
+2. Add the sidebar to your theme template with dynamic_sidebar():
+
+Add the following code to the template of the header, footer, or any other template where you need to place the sidebar:
+
+<?php
+  if (is_active_sidebar('sidebar-header-right')) {
+      dynamic_sidebar('sidebar-header-right');
+  } 
+?>
+
+
+
+
+====================================================== PUDIN.MY.ID =============================================================
