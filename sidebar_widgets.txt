@@ -1,3 +1,6 @@
+Ref : https://www.wpdiaries.com/create-sidebar/
+
+
 1. To do that, add the code to functions.php of your theme:
 
 function my_theme_widgets_init() {
