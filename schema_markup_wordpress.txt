@@ -1,0 +1,46 @@
+
+Cari content-single.php
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+ <h2 class="entry-title"><?php the_title(); ?></h2>
+
+ <?php if ( has_post_thumbnail() ) { ?>                            
+  <?php the_post_thumbnail( medium, array(
+   'class' => 'left',
+   'alt'      => get_the_title()
+  ) );
+ ?>                  
+ <?php } ?>
+
+ <section class="entry-content">
+  <?php the_content(); ?>
+ </section><!-- .entry-content -->
+
+</article>
+
+
+Silahkan ubah menjadi seperti ini :
+
+<article itemscope itemtype ="http://schema.org/Article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  
+ <h2 itemprop="name" class="entry-title"><?php the_title(); ?></h2>
+
+ <?php if ( has_post_thumbnail() ) { ?>                            
+  <?php the_post_thumbnail( medium, array(
+   'class' => 'left',
+   'alt'      => get_the_title()
+  ) );
+  ?>                  
+  <?php } ?>
+
+ <section itemprop=”articleBody”>class="entry-content">
+  <?php the_content(); ?>
+ </section><!-- .entry-content -->
+
+</article>
+
+
+
+
+===================================================== PUDIN.MY.ID ==========================================================
