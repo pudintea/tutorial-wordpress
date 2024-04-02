@@ -1,8 +1,13 @@
 /* PUDIN.MY.ID */
 if ($_SERVER['HTTP_HOST'] == 'localhost'){
-	define('WP_DEBUG', true);
+	define('WP_DEBUG', true );
+	define('WP_DEBUG_DISPLAY', true );
+	define('WP_DEBUG_LOG', true );
 }else{
-	define('WP_DEBUG', false);
+	ini_set('display_errors', 0 );
+	define('WP_DEBUG', false );
+	define('WP_DEBUG_DISPLAY', false );
+	define('WP_DEBUG_LOG', false );
 }
 
 /* PUDIN.MY.ID */
