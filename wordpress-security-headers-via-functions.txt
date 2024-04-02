@@ -1,0 +1,47 @@
+wordpress-security-headers-via-functions-htaccess
+
+Hide WordPress version
+========================
+add theme’s functions.php
+
+add_filter( 'the_generator', '__return_empty_string' );
+
+
+functions.php :
+===============
+function hoolite_add_security_headers() {
+ header("X-Frame-Options: SAMEORIGIN");
+ header("X-Content-Type-Options: nosniff");
+ header("X-XSS-Protection: 1;mode=block");
+ header("Referrer-Policy: no-referrer-when-downgrade");
+ header("Content-Security-Policy: upgrade-insecure-requests;");
+ header('Strict-Transport-Security: "max-age=31536000" env=HTTPS');
+}
+add_action("send_headers", "hoolite_add_security_headers");
+
+
+.htaccess Snippet:
+=====================
+<IfModule mod_headers.c>
+    Header always append X-Frame-Options SAMEORIGIN
+    Header always append X-Content-Type-Options nosniff
+    Header always append X-XSS-Protection "1; mode=block"
+    Header always append Referrer-Policy no-referrer-when-downgrade
+    Header always append Content-Security-Policy "upgrade-insecure-requests"
+    Header always set Strict-Transport-Security "max-age=31536000" env=HTTPS
+</IfModule>
+
+# Headers
+<IfModule mod_headers.c>
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header set X-XSS-Protection "1; mode=block"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always append X-Frame-Options DENY
+  Header set X-Permitted-Cross-Domain-Policies "none"
+  Header always set Referrer-Policy "strict-origin"
+  Header always set Permissions-Policy "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()"
+<IfModule mod_headers.c>
+
+
+================= PUDIN.MY.ID ==========================================
