@@ -25,4 +25,6 @@ define ( 'FORCE_SSL_ADMIN', true );
 //Jangan Izinkan HTML Tanpa Filter
 define ( 'DISALLOW_UNFILTERED_HTML', true );
 
+/* END PUDIN.MY.ID */
+
 ================================= PUDIN.MY.ID ==============================================
