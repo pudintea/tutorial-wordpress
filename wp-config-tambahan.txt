@@ -13,5 +13,8 @@ define( 'DISALLOW_FILE_EDIT', true );
 // somewhere in wp-config.php
 define('DISALLOW_FILE_MODS', true);
 
+//Nonaktifkan Pengeditan File
+define ( 'FORCE_SSL_ADMIN', true );
+
 
 ================================= PUDIN.MY.ID ==============================================
