@@ -21,7 +21,7 @@ add_filter ( 'pre_site_transient_update_themes' , 'remove_core_updates' );
 
 <h1>Hide Admin Notif Dashboard</h1>
 <pre><code>
-    // pudin.my.id
+// pudin.my.id
 function pdn_hide_all_admin_notices() {
     global $wp_filter;
 
