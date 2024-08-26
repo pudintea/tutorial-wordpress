@@ -1,5 +1,6 @@
 # mencegah aksess ke folder yang tidak ada file index.html
 Options -Indexes
+Options All -Indexes
 
 # mencegah eksekusi file .php
 <Files *.php>
