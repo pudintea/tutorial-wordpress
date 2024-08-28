@@ -25,6 +25,9 @@ define ( 'FORCE_SSL_ADMIN', true );
 //Jangan Izinkan HTML Tanpa Filter
 define ( 'DISALLOW_UNFILTERED_HTML', true );
 
+// Disable FTP
+define( 'FS_METHOD', 'direct' );
+
 /* END PUDIN.MY.ID */
 
 ================================= PUDIN.MY.ID ==============================================
