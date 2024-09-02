@@ -2,6 +2,24 @@
 # Lokasi : wp-content/uploads/
 # Kill PHP Execution
 # pudin.my.id
-<Files ~ ".ph(?:p[345]?|t|tml)$">
-  deny from all
-</Files>
+
+# Izinkan akses untuk file CSS, gambar, dan file yang diizinkan
+<FilesMatch "\.(css|jpg|jpeg|png|gif|webp|svg)$">
+    Allow from all
+</FilesMatch>
+
+# Blokir akses ke file yang bisa digunakan untuk serangan
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|bash|sql)$">
+    Deny from all
+</FilesMatch>
+
+
+# Blokir eksekusi file PHP
+<FilesMatch "\.(php|php5|phtml|phar)$">
+    Deny from all
+</FilesMatch>
+
+# Nonaktifkan interpretasi PHP di dalam folder dan subfolder
+RemoveHandler .php .phtml .php5 .phar
+RemoveType .php .phtml .php5 .phar
+
