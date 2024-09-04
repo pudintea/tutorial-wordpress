@@ -38,6 +38,11 @@ RewriteRule . /index.php [L]
         deny from all
 </Files>
 
+<IfModule mod_headers.c>
+    Header always append X-Frame-Options "DENY"
+    Header always append Content-Security-Policy "frame-ancestors 'self'"
+</IfModule>
+
 <IfModule mod_gzip.c>
    mod_gzip_on Yes
    mod_gzip_dechunk Yes
@@ -77,6 +82,7 @@ RewriteRule . /index.php [L]
     BrowserMatch ^Mozilla/4\.0[678] no-gzip
     BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
 </IfModule>
+
 
 
 =================================================================================
