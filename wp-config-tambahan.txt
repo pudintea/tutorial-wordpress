@@ -15,12 +15,11 @@ if ($_SERVER['HTTP_HOST'] == 'localhost'){
 // define( 'WP_SITEURL', 'https://example.com/wordpress' );
 // define( 'WP_HOME', 'https://example.com/wordpress' );
 
+//Nonaktifkan Pengeditan File
 define( 'DISALLOW_FILE_EDIT', true );
+
 // somewhere in wp-config.php
 define('DISALLOW_FILE_MODS', true);
-
-//Nonaktifkan Pengeditan File
-define ( 'FORCE_SSL_ADMIN', true );
 
 //Jangan Izinkan HTML Tanpa Filter
 define ( 'DISALLOW_UNFILTERED_HTML', true );
