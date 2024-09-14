@@ -3,6 +3,10 @@
 # Kill PHP Execution
 # pudin.my.id
 
+# mencegah aksess ke folder yang tidak ada file index.html
+Options -Indexes
+Options All -Indexes
+
 # Izinkan akses untuk file CSS, gambar, dan file yang diizinkan
 <FilesMatch "\.(css|jpg|jpeg|png|gif|webp|svg)$">
     Allow from all
@@ -23,3 +27,4 @@
 RemoveHandler .php .phtml .php5 .phar
 RemoveType .php .phtml .php5 .phar
 
+#SELESAI
