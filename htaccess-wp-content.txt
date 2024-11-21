@@ -1,3 +1,34 @@
+
+#.htaccess
+# Lokasi : wp-content/uploads/
+# Kill PHP Execution
+# pudin.my.id
+
+# Index setiap folder
+Options -Indexes
+Options All -Indexes
+
+# Matikan eksekusi PHP di folder ini dan subfolder
+<FilesMatch "\.php$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Hanya izinkan akses ke file gambar
+<FilesMatch "\.(jpg|jpeg|png|gif|pdf)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Blokir semua file lainnya
+<FilesMatch ".*">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+
+
+# ===============================================================
 #.htaccess
 # Lokasi : wp-content/uploads/
 # Kill PHP Execution
