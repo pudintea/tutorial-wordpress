@@ -1,4 +1,26 @@
 
+============= APACHE =================
+
+
+        #Nonaktifkan Eksekusi PHP di Folder ini
+        <Directory /var/www/html/public_html/webnyaYA/wp-content/uploads>
+                Options -ExecCGI
+                php_flag engine off
+                AllowOverride None
+                Options -Indexes
+                Options All -Indexes
+                <FilesMatch "\.(jpe?g|png|gif|pdf)$">
+                        Order allow,deny
+                        Allow from all
+                </FilesMatch>
+                <FilesMatch "\.php$">
+                        Deny from all
+                </FilesMatch>
+        </Directory>
+
+
+
+==================================================
 # .htaccess
 # Lokasi : wp-content/uploads/
 # Kill PHP Execution
@@ -25,6 +47,7 @@ Options All -Indexes
     Order Deny,Allow
     Deny from all
 </FilesMatch>
+
 
 
 
